@@ -1,6 +1,7 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -17,6 +18,6 @@ public class Interest {
   private String category;
   private String conservationState;
   private String addres;
-  private List<String> keyworlds = new List<>();
+  private List<String> keyworlds = new ArrayList<>();
   private User user;
 }

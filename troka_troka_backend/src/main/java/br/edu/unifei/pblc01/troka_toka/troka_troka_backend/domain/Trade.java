@@ -1,10 +1,11 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import java.io.Serializable;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
 
