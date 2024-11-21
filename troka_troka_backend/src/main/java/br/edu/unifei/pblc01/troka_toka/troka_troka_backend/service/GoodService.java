@@ -9,5 +9,5 @@ import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.repository.GoodJPA;
 
 @Service
 
-public class GoodService extends ServiceBase<Good, Serializable, GoodJPA>{
+public class GoodService extends ServiceBase<Good, Integer, GoodJPA>{
 }
