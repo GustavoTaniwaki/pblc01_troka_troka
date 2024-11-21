@@ -8,5 +8,5 @@ import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.repository.ReportJPA;
 
 @Service
 
-public class ReportService extends ServiceBase<Report, User, ReportJPA>{
+public class ReportService extends ServiceBase<Report, Integer, ReportJPA>{
 }
