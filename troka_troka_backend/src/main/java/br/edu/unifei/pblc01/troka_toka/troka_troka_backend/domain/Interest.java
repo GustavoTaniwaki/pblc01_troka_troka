@@ -1,11 +1,9 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
@@ -13,11 +11,14 @@ import lombok.Data;
 
 public class Interest {
   @Id
-  private Serializable id;
+  @GeneratedValue
+  private int cod;
   private Float value;
   private String category;
   private String conservationState;
   private String addres;
-  private List<String> keyworlds = new ArrayList<>();
+  //@ManyToOne
+  //private List<String> keywords = new ArrayList<>();
+  @ManyToOne
   private User user;
 }

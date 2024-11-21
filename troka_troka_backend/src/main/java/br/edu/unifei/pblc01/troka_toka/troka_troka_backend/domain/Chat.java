@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,5 +13,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 
 public class Chat extends Message{
+  @ManyToMany
   private List<Message> ownership = new ArrayList<>();
 }
