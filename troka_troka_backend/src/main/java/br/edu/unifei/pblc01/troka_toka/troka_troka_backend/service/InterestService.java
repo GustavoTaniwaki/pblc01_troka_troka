@@ -9,5 +9,5 @@ import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.repository.InterestJP
 
 @Service
 
-public class InterestService extends ServiceBase<Interest, Serializable, InterestJPA>{
+public class InterestService extends ServiceBase<Interest, Integer, InterestJPA>{
 }
