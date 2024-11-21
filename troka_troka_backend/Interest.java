@@ -20,6 +20,7 @@ public class Interest {
   private String category;
   private String conservationState;
   private String addres;
+  @ManyToOne
   private List<String> keyworlds = new ArrayList<>();
   private User user;
 }
