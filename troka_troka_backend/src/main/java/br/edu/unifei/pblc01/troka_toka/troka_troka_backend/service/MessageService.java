@@ -8,5 +8,5 @@ import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.repository.MessageJPA
 
 @Service
 
-public class MessageService extends ServiceBase<Message, User, MessageJPA>{
+public class MessageService extends ServiceBase<Message, Integer, MessageJPA>{
 }
