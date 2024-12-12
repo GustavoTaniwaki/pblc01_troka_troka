@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.Message;
-import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.User;
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.service.MessageService;
 
 @RestController
@@ -31,8 +30,8 @@ public class MessageController {
 
     //get localhost:8080/message/{user}
     @GetMapping("/{user}")
-    public Message getMessage(@PathVariable User user) {
-        return messageService.getId(user).orElse(null);
+    public Message getMessage(@PathVariable Integer cod) {
+        return messageService.getId(cod).orElse(null);
     }
 
     //insert
@@ -45,14 +44,14 @@ public class MessageController {
     //update
     //put localhost:8080/message/{user}
     @PutMapping("/{user}")
-    public Message putMessage(@RequestBody Message message, @PathVariable User user) {
+    public Message putMessage(@RequestBody Message message, @PathVariable Integer cod) {
         return messageService.update(message);
     }    
     
     //delete
     //delete localhost:8080/chat/{user}
     @DeleteMapping("/{user}")
-    public void deleteUser(@PathVariable User user) {
-        messageService.deleteId(user);
+    public void deleteUser(@PathVariable Integer cod) {
+        messageService.deleteId(cod);
     }
 }

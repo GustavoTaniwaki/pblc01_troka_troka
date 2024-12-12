@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.Report;
-import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.User;
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.service.ReportService;
 
 
@@ -32,8 +31,8 @@ public class ReportController {
 
     //get localhost:8080/report/{user}
     @GetMapping("/{user}")
-    public Report getReport(@PathVariable User user) {
-        return reportService.getId(user).orElse(null);
+    public Report getReport(@PathVariable Integer cod) {
+        return reportService.getId(cod).orElse(null);
     }
 
     //insert
@@ -46,14 +45,14 @@ public class ReportController {
     //update
     //put localhost:8080/report/{user}
     @PutMapping("/{user}")
-    public Report putRating(@RequestBody Report report, @PathVariable User user) {
+    public Report putRating(@RequestBody Report report, @PathVariable Integer cod) {
         return reportService.update(report);
     }    
     
     //delete
     //delete localhost:8080/report/{user}
     @DeleteMapping("/{user}")
-    public void deleteId(@PathVariable User user) {
-        reportService.deleteId(user);
+    public void deleteId(@PathVariable Integer cod) {
+        reportService.deleteId(cod);
     }
 }

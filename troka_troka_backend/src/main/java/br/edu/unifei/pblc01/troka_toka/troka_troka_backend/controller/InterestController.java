@@ -1,6 +1,5 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.controller;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,8 @@ public class InterestController {
 
     //get localhost:8080/interest/{serializable}
     @GetMapping("/{id}")
-    public Interest getId(@PathVariable Serializable id) {
-        return interestService.getId(id).orElse(null);
+    public Interest getId(@PathVariable Integer cod) {
+        return interestService.getId(cod).orElse(null);
     }
 
     //insert
@@ -45,14 +44,14 @@ public class InterestController {
     //update
     //put localhost:8080/interest/{serializable}
     @PutMapping("/{id}")
-    public Interest putGood(@RequestBody Interest interest, @PathVariable Serializable id) {
+    public Interest putGood(@RequestBody Interest interest, @PathVariable Integer cod) {
         return interestService.update(interest);
     }    
     
     //delete
     //delete localhost:8080/interest/{serializable}
     @DeleteMapping("/{id}")
-    public void deleteId(@PathVariable Serializable id) {
-        interestService.deleteId(id);
+    public void deleteId(@PathVariable Integer cod) {
+        interestService.deleteId(cod);
     }
 }

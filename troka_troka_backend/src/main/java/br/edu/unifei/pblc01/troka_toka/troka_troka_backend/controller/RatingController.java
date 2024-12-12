@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.Rating;
-import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.domain.User;
 import br.edu.unifei.pblc01.troka_toka.troka_troka_backend.service.RatingService;
 
 @RestController
@@ -31,8 +30,8 @@ public class RatingController {
 
     //get localhost:8080/rating/{user}
     @GetMapping("/{user}")
-    public Rating getRating(@PathVariable User user) {
-        return ratingService.getId(user).orElse(null);
+    public Rating getRating(@PathVariable Integer cod) {
+        return ratingService.getId(cod).orElse(null);
     }
 
     //insert
@@ -45,14 +44,14 @@ public class RatingController {
     //update
     //put localhost:8080/rating/{user}
     @PutMapping("/{user}")
-    public Rating putRating(@RequestBody Rating rating, @PathVariable User user) {
+    public Rating putRating(@RequestBody Rating rating, @PathVariable Integer cod) {
         return ratingService.update(rating);
     }    
     
     //delete
     //delete localhost:8080/rating/{user}
     @DeleteMapping("/{user}")
-    public void deleteId(@PathVariable User user) {
-        ratingService.deleteId(user);
+    public void deleteId(@PathVariable Integer cod) {
+        ratingService.deleteId(cod);
     }
 }

@@ -1,6 +1,5 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.controller;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,8 @@ public class TradeController {
 
     //get localhost:8080/trade/{serializable}
     @GetMapping("/{id}")
-    public Trade getId(@PathVariable Serializable id) {
-        return tradeService.getId(id).orElse(null);
+    public Trade getId(@PathVariable Integer cod) {
+        return tradeService.getId(cod).orElse(null);
     }
 
     //insert
@@ -45,14 +44,14 @@ public class TradeController {
     //update
     //put localhost:8080/trade/{serializable}
     @PutMapping("/{id}")
-    public Trade putGood(@RequestBody Trade trade, @PathVariable Serializable id) {
+    public Trade putGood(@RequestBody Trade trade, @PathVariable Integer cod) {
         return tradeService.update(trade);
     }    
     
     //delete
     //delete localhost:8080/trade/{serializable}
     @DeleteMapping("/{id}")
-    public void deleteId(@PathVariable Serializable id) {
-        tradeService.deleteId(id);
+    public void deleteId(@PathVariable Integer cod) {
+        tradeService.deleteId(cod);
     }
 }

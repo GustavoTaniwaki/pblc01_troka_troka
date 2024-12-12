@@ -1,6 +1,5 @@
 package br.edu.unifei.pblc01.troka_toka.troka_troka_backend.controller;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,8 @@ public class GoodController {
 
     //get localhost:8080/good/{serializable}
     @GetMapping("/{id}")
-    public Good getId(@PathVariable Serializable id) {
-        return goodService.getId(id).orElse(null);
+    public Good getId(@PathVariable Integer cod) {
+        return goodService.getId(cod).orElse(null);
     }
 
     //insert
@@ -45,14 +44,14 @@ public class GoodController {
     //update
     //put localhost:8080/good/{serializable}
     @PutMapping("/{cpf}")
-    public Good putGood(@RequestBody Good good, @PathVariable Serializable id) {
+    public Good putGood(@RequestBody Good good, @PathVariable Integer cod) {
         return goodService.update(good);
     }    
     
     //delete
     //delete localhost:8080/good/{serializable}
     @DeleteMapping("/{cpf}")
-    public void deleteId(@PathVariable Serializable id) {
-        goodService.deleteId(id);
+    public void deleteId(@PathVariable Integer cod) {
+        goodService.deleteId(cod);
     }
 }
