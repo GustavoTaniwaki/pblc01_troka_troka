@@ -6,6 +6,8 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
@@ -21,15 +23,21 @@ public class User {
     private String email;
     private String address;
     private boolean isSuspect;
-
+    @ManyToMany
     private List<Good> ownership = new ArrayList<>();
+    @ManyToMany
     private List<Good> hearted = new ArrayList<>();
+    @ManyToMany
     private List<Good> interestDisplayed = new ArrayList<>();
+    @ManyToMany
     private List<Good> cart = new ArrayList<>();
+    @OneToMany
     private List<Message> comment = new ArrayList<>();
+    @ManyToMany
     private List<Chat> chats = new ArrayList<>();
+    @OneToMany
     private List<Rating> userRating = new ArrayList<>();
+    @OneToMany
     private List<Interest> interests = new ArrayList<>();
-
 
 }
